@@ -10,4 +10,4 @@ class TaskSerializer(serializers.ModelSerializer):
     category = serializers.StringRelatedField()
     class Meta:
         model = Task
-        fields = ('title','description','completed','category')
+        fields = ('id','title','description','completed','category')

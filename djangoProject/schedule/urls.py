@@ -1,11 +1,13 @@
 from django.urls import path
+from rest_framework.urlpatterns import format_suffix_patterns
 
 import schedule.views
 
 app_name = "schedule"
 urlpatterns = [
-    path("categories/",schedule.views.categories,name="categories"),
-    path("categories/<int:id>/",schedule.views.category,name="category"),
-    path("tasks/",schedule.views.tasks,name="tasks"),
-    path("tasks/<int:id>/",schedule.views.tasks,name="task")
+    path("categories/",schedule.views.Categories.as_view(),name="categories"),
+    path("categories/<int:pk>/",schedule.views.Category.as_view(),name="category"),
+    path("tasks/",schedule.views.Tasks.as_view(),name="tasks"),
+    path("tasks/<int:pk>/",schedule.views.Task.as_view(),name="task")
 ]
+# urlpatterns = format_suffix_patterns(urlpatterns)
