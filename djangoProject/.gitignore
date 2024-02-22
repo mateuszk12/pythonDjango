@@ -8,5 +8,5 @@ db.sqlite3
 media
 .python-version
 venv/
-.env/
-.env
+dj.env/
+dj.env

@@ -12,7 +12,7 @@ class Categories(generics.GenericAPIView,mixins.ListModelMixin,mixins.CreateMode
         return self.list(request,*args,**kwargs)
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
-class Category(generics.GenericAPIView,
+class SingleCategory(generics.GenericAPIView,
                mixins.UpdateModelMixin,
                mixins.DestroyModelMixin,
                mixins.RetrieveModelMixin):
