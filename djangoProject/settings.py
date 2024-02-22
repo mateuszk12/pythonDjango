@@ -1,6 +1,6 @@
 
-
 from pathlib import Path
+
 import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -18,20 +18,39 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_swagger',
     'rest_framework.authtoken',
-    'accounts.apps.AuthConfig',
+    'apiAuth.apps.AuthConfig',
     'schedule.apps.ScheduleConfig'
 ]
 REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
                'rest_framework.authentication.TokenAuthentication',
+               'rest_framework.authentication.SessionAuthentication'
+
     ),
-    'DEFAULT_PERMISSION_CLASSES':(
+    'DEFAULT_PERMISSION_CLASSES' :(
                 'rest_framework.permissions.AllowAny',
     ),
 
 }
+SWAGGER_SETTINGS = {
+    'api_path': '/',
+    'enabled_methods': [
+        'get',
+        'post',
+        'put',
+        'patch',
+        'delete'
+    ]
+}
 MIDDLEWARE = [
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

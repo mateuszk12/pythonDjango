@@ -10,4 +10,3 @@ urlpatterns = [
     path("tasks/",schedule.views.Tasks.as_view(),name="tasks"),
     path("tasks/<int:pk>/",schedule.views.Task.as_view(),name="task")
 ]
-# urlpatterns = format_suffix_patterns(urlpatterns)

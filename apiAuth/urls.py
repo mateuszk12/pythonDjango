@@ -1,5 +1,5 @@
 from django.urls import path
-from accounts import views
+from apiAuth import views
 
 urlpatterns = [
     path('login/',views.login,name="login"),
