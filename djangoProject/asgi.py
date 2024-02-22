@@ -1,5 +1,5 @@
 """
-ASGI config for djangoProject project.
+ASGI config for scheduleApp project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

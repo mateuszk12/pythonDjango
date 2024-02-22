@@ -9,4 +9,3 @@ media
 .python-version
 venv/
 dj.env/
-dj.env
