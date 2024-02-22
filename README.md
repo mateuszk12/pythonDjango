@@ -1,4 +1,3 @@
-# Running project
 ## requirements:
 - docker
 - docker compose
