@@ -1,9 +1,10 @@
 services:
   django_app:
     build: .
+    container_name: schedule
     env_file:
       - dpp.env
-    command: sh -c "python manage.py makemigrations && python manage.py migrate  && python manage.py runserver 0.0.0.0:$$DJ_HOST"
+    command: sh -c "python manage.py makemigrations && python manage.py migrate  && python manage.py runserver 0.0.0.0:8000"
     ports:
       - 8000:8000
     depends_on:

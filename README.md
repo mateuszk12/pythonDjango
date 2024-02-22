@@ -7,6 +7,13 @@ to run project simply use:
 ```shell
 docker compose up
 ```
+adding superuser:
+```shell
+ docker exec schedule python manage.py createsuperuser --noinput \
+ --username admin \
+ --email admin@admin.pl
+```
+password is set in dpp.env file
 - Files containng **enviromantal variables** and **secrets** are included for demonstration purposes
 ## usage
 
