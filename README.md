@@ -1,5 +1,5 @@
 # Running project
-## requires:
+## requirements:
 - docker
 - docker compose
 
