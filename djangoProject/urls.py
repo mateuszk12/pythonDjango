@@ -13,6 +13,7 @@ handler500 = custom500
 urlpatterns = [
     path('api_schema/', get_schema_view(
         title='DOCS',
+        public=True
     ), name='api_schema'),
     path('docs/', TemplateView.as_view(
         template_name='docs.html',
@@ -22,4 +23,3 @@ urlpatterns = [
     path('schedule/',include("schedule.urls")),
     path('auth/', include("apiAuth.urls"))
 ]
-urlpatterns = format_suffix_patterns(urlpatterns)

@@ -24,7 +24,7 @@ class SingleCategory(generics.GenericAPIView,
     def put(self,request,*args,**kwargs):
         return self.update(request,*args,**kwargs)
     def delete(self,request,*args,**kwargs):
-        return self.delete(request,*args,**kwargs)
+        return self.destroy(request,*args,**kwargs)
 class Tasks(generics.GenericAPIView,mixins.ListModelMixin,mixins.CreateModelMixin):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
@@ -45,4 +45,4 @@ class Task(generics.GenericAPIView,
     def put(self,request,*args,**kwargs):
         return self.update(request,*args,**kwargs)
     def delete(self,request,*args,**kwargs):
-        return self.delete(request,*args,**kwargs)
+        return self.destroy(request,*args,**kwargs)

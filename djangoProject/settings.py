@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ['SECRET_KEY']
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
@@ -29,25 +29,25 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
     ],
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-               'rest_framework.authentication.TokenAuthentication',
-               'rest_framework.authentication.SessionAuthentication'
 
-    ),
-    'DEFAULT_PERMISSION_CLASSES' :(
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication'
+
+    ],
+    'DEFAULT_PERMISSION_CLASSES' :[
                 'rest_framework.permissions.AllowAny',
-    ),
+    ],
 
 }
 SWAGGER_SETTINGS = {
-    'api_path': '/',
-    'enabled_methods': [
+    'enabled_methods': [  # Specify which methods to enable in Swagger UI
         'get',
         'post',
         'put',
         'patch',
         'delete'
-    ]
+    ],
 }
 MIDDLEWARE = [
 
